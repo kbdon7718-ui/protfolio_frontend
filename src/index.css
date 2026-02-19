@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-slate-100;
+}
+
+::selection {
+  @apply bg-cyan-500/30;
+}
+
+/* Soft “agency” grid + glow backdrop */
+.bg-agency {
+  background:
+    radial-gradient(1200px 700px at 10% 10%, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 85% 15%, rgba(168, 85, 247, 0.18), transparent 55%),
+    radial-gradient(900px 700px at 50% 90%, rgba(34, 211, 238, 0.12), transparent 55%),
+    linear-gradient(to bottom, rgb(248 250 252), rgb(248 250 252));
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 20%, black 0%, transparent 70%);
+}
+
+.dark .bg-agency {
+  background:
+    radial-gradient(1200px 700px at 10% 10%, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 85% 15%, rgba(168, 85, 247, 0.18), transparent 55%),
+    radial-gradient(900px 700px at 50% 90%, rgba(34, 211, 238, 0.12), transparent 55%),
+    linear-gradient(to bottom, rgb(2 6 23), rgb(2 6 23));
+}
+
+/* Small utility class for premium glass cards */
+.glass {
+  @apply border backdrop-blur-xl;
+  @apply bg-white/70 border-slate-900/10;
+  @apply dark:bg-white/5 dark:border-white/10;
+}
+
+.section {
+  @apply relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.h2 {
+  @apply text-3xl sm:text-4xl font-semibold tracking-tight;
+}
+
+.p-muted {
+  @apply text-slate-600/90 dark:text-slate-300/90;
+}
